@@ -1,0 +1,13 @@
+numpy
+pandas
+pyarrow
+scipy
+statsmodels
+scikit-learn
+xgboost
+matplotlib
+seaborn
+joblib
+jupyterlab
+ipykernel
+pytest

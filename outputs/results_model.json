@@ -1,0 +1,884 @@
+{
+  "split": {
+    "train": {
+      "rows": 12818,
+      "start": "2011-01-09",
+      "end": "2012-06-30",
+      "mean_cnt": 169.32485567171165
+    },
+    "val": {
+      "rows": 2208,
+      "start": "2012-07-01",
+      "end": "2012-09-30",
+      "mean_cnt": 288.3528079710145
+    },
+    "test": {
+      "rows": 2168,
+      "start": "2012-10-01",
+      "end": "2012-12-31",
+      "mean_cnt": 219.19649446494466
+    }
+  },
+  "best_params_level": {
+    "n_estimators": 800,
+    "learning_rate": 0.02,
+    "max_depth": 8,
+    "min_child_weight": 3,
+    "subsample": 1.0,
+    "colsample_bytree": 0.6,
+    "reg_lambda": 3.0
+  },
+  "best_params_abs": {
+    "n_estimators": 300,
+    "learning_rate": 0.08,
+    "max_depth": 5,
+    "min_child_weight": 10,
+    "subsample": 0.85,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 10.0
+  },
+  "cv_mae_level": 41.72638225687985,
+  "cv_mae_abs": 40.381407122941305,
+  "default_cv_mae_level": 42.96999129461782,
+  "validation_table": [
+    {
+      "model": "Level-adjusted XGBoost Poisson",
+      "MAE": 39.79015467928398,
+      "RMSE": 61.5793304889622,
+      "R2": 0.9289680851611456,
+      "WAPE_%": 13.799121624396914,
+      "Bias": 6.136665766893718,
+      "kind": "model"
+    },
+    {
+      "model": "XGBoost Poisson, absolute (tuned)",
+      "MAE": 40.053053496324495,
+      "RMSE": 63.82839428906163,
+      "R2": 0.9236847317674682,
+      "WAPE_%": 13.890294246883379,
+      "Bias": -22.667534550246984,
+      "kind": "model"
+    },
+    {
+      "model": "Level-adjusted XGBoost (tuned)",
+      "MAE": 41.11413934504494,
+      "RMSE": 63.52026993041238,
+      "R2": 0.9244197600043682,
+      "WAPE_%": 14.258276045356833,
+      "Bias": 7.422765814190268,
+      "kind": "model"
+    },
+    {
+      "model": "Random forest (calendar+weather)",
+      "MAE": 41.54251390879367,
+      "RMSE": 64.84860591618191,
+      "R2": 0.9212256396748857,
+      "WAPE_%": 14.406835224219341,
+      "Bias": -21.961544504011734,
+      "kind": "model"
+    },
+    {
+      "model": "XGBoost Poisson (calendar+weather)",
+      "MAE": 41.6867190854273,
+      "RMSE": 66.54604128747214,
+      "R2": 0.9170477735665508,
+      "WAPE_%": 14.456845202498492,
+      "Bias": -24.337852232698083,
+      "kind": "model"
+    },
+    {
+      "model": "XGBoost Poisson + lag features",
+      "MAE": 45.787150013274044,
+      "RMSE": 75.35391644085956,
+      "R2": 0.893635854564824,
+      "WAPE_%": 15.878863929036754,
+      "Bias": -21.783916049677394,
+      "kind": "model"
+    },
+    {
+      "model": "Recent level x hourly profile",
+      "MAE": 46.288012745634795,
+      "RMSE": 75.43190739450311,
+      "R2": 0.8934155678325739,
+      "WAPE_%": 16.052561815277247,
+      "Bias": 5.868657849402785,
+      "kind": "baseline"
+    },
+    {
+      "model": "HistGB Poisson (calendar+weather)",
+      "MAE": 46.45526454606207,
+      "RMSE": 71.57436084089099,
+      "R2": 0.9040381628811476,
+      "WAPE_%": 16.110564302440153,
+      "Bias": -35.08505283511383,
+      "kind": "model"
+    },
+    {
+      "model": "Ridge (log target, with lags)",
+      "MAE": 50.88823257066752,
+      "RMSE": 81.74155715459106,
+      "R2": 0.8748388888661337,
+      "WAPE_%": 17.647906024824582,
+      "Bias": 0.7180721926975571,
+      "kind": "model"
+    },
+    {
+      "model": "Same hour last week",
+      "MAE": 55.997735507246375,
+      "RMSE": 97.89196342715366,
+      "R2": 0.8204945349390372,
+      "WAPE_%": 19.41986828610156,
+      "Bias": -2.936141304347826,
+      "kind": "baseline"
+    },
+    {
+      "model": "Same hour yesterday",
+      "MAE": 83.69202898550725,
+      "RMSE": 139.92904516632498,
+      "R2": 0.6332253274815542,
+      "WAPE_%": 29.024176866666775,
+      "Bias": -0.5443840579710145,
+      "kind": "baseline"
+    },
+    {
+      "model": "Typical hourly profile",
+      "MAE": 124.05661913469015,
+      "RMSE": 166.6133152106025,
+      "R2": 0.48000040126196,
+      "WAPE_%": 43.022511210350494,
+      "Bias": -119.89921622587148,
+      "kind": "baseline"
+    }
+  ],
+  "selected_model": "Level-adjusted XGBoost Poisson",
+  "final_params": {},
+  "tuned_val_mae": 41.11413934504494,
+  "default_val_mae": 39.79015467928398,
+  "test_table": [
+    {
+      "model": "Level-adjusted XGBoost (final)",
+      "kind": "model",
+      "MAE": 42.75156352647216,
+      "RMSE": 67.28847856246871,
+      "R2": 0.8885805957571628,
+      "WAPE_%": 19.50376242595854,
+      "Bias": 3.22317932678139
+    },
+    {
+      "model": "Recent level x hourly profile",
+      "kind": "baseline",
+      "MAE": 53.29655027466973,
+      "RMSE": 87.85831537226774,
+      "R2": 0.8100474369594217,
+      "WAPE_%": 24.314508498306875,
+      "Bias": 12.122715853489565
+    },
+    {
+      "model": "Same hour last week",
+      "kind": "baseline",
+      "MAE": 72.7910516605166,
+      "RMSE": 122.13727645110231,
+      "R2": 0.6329071908753974,
+      "WAPE_%": 33.208127638262866,
+      "Bias": 14.122232472324724
+    },
+    {
+      "model": "Same hour yesterday",
+      "kind": "baseline",
+      "MAE": 76.60470479704797,
+      "RMSE": 127.55133001920402,
+      "R2": 0.5996411828061274,
+      "WAPE_%": 34.9479607253934,
+      "Bias": -0.10378228782287822
+    },
+    {
+      "model": "Typical hourly profile",
+      "kind": "baseline",
+      "MAE": 78.90265988918827,
+      "RMSE": 118.18153319885049,
+      "R2": 0.656300694717559,
+      "WAPE_%": 35.99631466816496,
+      "Bias": -33.313858174846395
+    }
+  ],
+  "final": {
+    "metrics": {
+      "MAE": 42.75156352647216,
+      "RMSE": 67.28847856246871,
+      "R2": 0.8885805957571628,
+      "WAPE_%": 19.50376242595854,
+      "Bias": 3.22317932678139
+    },
+    "best_baseline": "Recent level x hourly profile",
+    "best_baseline_metrics": {
+      "MAE": 53.29655027466973,
+      "RMSE": 87.85831537226774,
+      "R2": 0.8100474369594217,
+      "WAPE_%": 24.314508498306875,
+      "Bias": 12.122715853489565
+    },
+    "mae_reduction_vs_best_baseline_pct": 19.78549586015005,
+    "mae_reduction_ci95_pct": [
+      12.92022185932156,
+      25.714787809548806
+    ],
+    "mae_reduction_vs_last_week_pct": 41.26810569263761,
+    "criterion_30pct_met": false
+  },
+  "ablation": [
+    {
+      "variant": "Final: level-adjusted, calendar + weather",
+      "MAE": 42.75156352647216,
+      "RMSE": 67.28847856246871,
+      "R2": 0.8885805957571628,
+      "WAPE_%": 19.50376242595854,
+      "Bias": 3.22317932678139
+    },
+    {
+      "variant": "Without weather (calendar only)",
+      "MAE": 51.78448757420287,
+      "RMSE": 84.35416827236253,
+      "R2": 0.8248974342264979,
+      "WAPE_%": 23.624687840290527,
+      "Bias": -0.943291619941307
+    },
+    {
+      "variant": "Plus lag features (24 h, 168 h)",
+      "MAE": 43.87080548963721,
+      "RMSE": 68.46452873090428,
+      "R2": 0.8846518427891126,
+      "WAPE_%": 20.014373677245704,
+      "Bias": 7.51290060859526
+    },
+    {
+      "variant": "Absolute demand + trend feature (tuned)",
+      "MAE": 44.04667933906576,
+      "RMSE": 69.3694919356323,
+      "R2": 0.8815823489870926,
+      "WAPE_%": 20.094609380767263,
+      "Bias": -4.348927535913967
+    }
+  ],
+  "intervals": {
+    "nominal": 80,
+    "qhat": 0.3315051452214874,
+    "coverage_conformal_pct": 75.0,
+    "coverage_poisson_pct": 33.071955719557195,
+    "below_upper_pct": 88.9760147601476,
+    "mean_width_all": 150.78100739931145,
+    "mean_width_rush": 305.9752515768451,
+    "mean_width_night": 22.856432827120255,
+    "mean_upper_minus_forecast_rush": 152.98762578842258,
+    "coverage_rush_pct": 81.60377358490565,
+    "coverage_night_pct": 70.2048417132216,
+    "calibration_folds": 5,
+    "calibration_points": 10730
+  },
+  "errors": {
+    "by_hour": [
+      {
+        "hr": 0,
+        "hours": 91.0,
+        "mean_demand": 60.08791208791209,
+        "MAE": 17.431079418773212,
+        "WAPE_%": 29.00929457037971,
+        "bias": -0.724414178900799
+      },
+      {
+        "hr": 1,
+        "hours": 90.0,
+        "mean_demand": 39.41111111111111,
+        "MAE": 11.448850359676515,
+        "WAPE_%": 29.04980356275405,
+        "bias": -0.5206272716742376
+      },
+      {
+        "hr": 2,
+        "hours": 90.0,
+        "mean_demand": 24.266666666666666,
+        "MAE": 8.55358890930299,
+        "WAPE_%": 35.2483059449299,
+        "bias": 4.181837044737089
+      },
+      {
+        "hr": 3,
+        "hours": 87.0,
+        "mean_demand": 11.71264367816092,
+        "MAE": 6.251422659366673,
+        "WAPE_%": 53.37328472668308,
+        "bias": 3.7125218090539835
+      },
+      {
+        "hr": 4,
+        "hours": 89.0,
+        "mean_demand": 7.932584269662922,
+        "MAE": 2.743461880834779,
+        "WAPE_%": 34.58471776123163,
+        "bias": 0.779279816158364
+      },
+      {
+        "hr": 5,
+        "hours": 90.0,
+        "mean_demand": 25.877777777777776,
+        "MAE": 6.343529351210965,
+        "WAPE_%": 24.513423856117942,
+        "bias": -0.8850900122887212
+      },
+      {
+        "hr": 6,
+        "hours": 90.0,
+        "mean_demand": 89.56666666666666,
+        "MAE": 16.670814805786577,
+        "WAPE_%": 18.612744479851035,
+        "bias": -0.9146454049813906
+      },
+      {
+        "hr": 7,
+        "hours": 90.0,
+        "mean_demand": 254.75555555555556,
+        "MAE": 47.212732036702,
+        "WAPE_%": 18.532562296332785,
+        "bias": -3.1611080404287266
+      },
+      {
+        "hr": 8,
+        "hours": 90.0,
+        "mean_demand": 454.6333333333333,
+        "MAE": 92.71397477489299,
+        "WAPE_%": 20.39313177833265,
+        "bias": -35.45114801701493
+      },
+      {
+        "hr": 9,
+        "hours": 90.0,
+        "mean_demand": 270.35555555555555,
+        "MAE": 52.70060295784678,
+        "WAPE_%": 19.493071947255512,
+        "bias": 4.887346345269015
+      },
+      {
+        "hr": 10,
+        "hours": 90.0,
+        "mean_demand": 204.87777777777777,
+        "MAE": 37.96486736801527,
+        "WAPE_%": 18.530495488482966,
+        "bias": 9.21118678739738
+      },
+      {
+        "hr": 11,
+        "hours": 90.0,
+        "mean_demand": 251.0,
+        "MAE": 40.043461028984176,
+        "WAPE_%": 15.953570131069391,
+        "bias": 9.238007280893783
+      },
+      {
+        "hr": 12,
+        "hours": 90.0,
+        "mean_demand": 314.7111111111111,
+        "MAE": 59.2892450477041,
+        "WAPE_%": 18.83926018321342,
+        "bias": -7.102328987628536
+      },
+      {
+        "hr": 13,
+        "hours": 91.0,
+        "mean_demand": 310.7032967032967,
+        "MAE": 56.280063472965026,
+        "WAPE_%": 18.113764504632584,
+        "bias": -2.634168906697796
+      },
+      {
+        "hr": 14,
+        "hours": 91.0,
+        "mean_demand": 297.0989010989011,
+        "MAE": 56.56395750719721,
+        "WAPE_%": 19.038763623150416,
+        "bias": 6.913372295988063
+      },
+      {
+        "hr": 15,
+        "hours": 91.0,
+        "mean_demand": 318.04395604395603,
+        "MAE": 54.751538913550796,
+        "WAPE_%": 17.21508548522259,
+        "bias": -12.704158948060886
+      },
+      {
+        "hr": 16,
+        "hours": 91.0,
+        "mean_demand": 386.86813186813185,
+        "MAE": 62.785459355061775,
+        "WAPE_%": 16.22916290671956,
+        "bias": -9.64974048748916
+      },
+      {
+        "hr": 17,
+        "hours": 91.0,
+        "mean_demand": 525.5714285714286,
+        "MAE": 85.27072369830496,
+        "WAPE_%": 16.224383416366805,
+        "bias": -0.32938851888254017
+      },
+      {
+        "hr": 18,
+        "hours": 91.0,
+        "mean_demand": 455.84615384615387,
+        "MAE": 90.63517621472627,
+        "WAPE_%": 19.882843246564992,
+        "bias": 29.1450395543676
+      },
+      {
+        "hr": 19,
+        "hours": 91.0,
+        "mean_demand": 317.3626373626374,
+        "MAE": 71.75719752977736,
+        "WAPE_%": 22.61047429089245,
+        "bias": 34.049088824271365
+      },
+      {
+        "hr": 20,
+        "hours": 91.0,
+        "mean_demand": 226.84615384615384,
+        "MAE": 48.28104363337223,
+        "WAPE_%": 21.283606891618817,
+        "bias": 17.620686669826647
+      },
+      {
+        "hr": 21,
+        "hours": 91.0,
+        "mean_demand": 170.9120879120879,
+        "MAE": 43.19184300206379,
+        "WAPE_%": 25.271379882902366,
+        "bias": 17.547388815988207
+      },
+      {
+        "hr": 22,
+        "hours": 91.0,
+        "mean_demand": 131.16483516483515,
+        "MAE": 29.29142887210488,
+        "WAPE_%": 22.331769666232777,
+        "bias": 9.85657439072393
+      },
+      {
+        "hr": 23,
+        "hours": 91.0,
+        "mean_demand": 94.46153846153847,
+        "MAE": 24.778047162557943,
+        "WAPE_%": 26.23083168674701,
+        "bias": 3.678938117997222
+      }
+    ],
+    "by_weather": [
+      {
+        "weather": "Clear",
+        "hours": 1224.0,
+        "mean_demand": 237.36764705882354,
+        "MAE": 41.51215453508545,
+        "WAPE_%": 17.488547849487706,
+        "bias": 5.975931376997453
+      },
+      {
+        "weather": "Mist/cloudy",
+        "hours": 784.0,
+        "mean_demand": 207.66198979591837,
+        "MAE": 41.47634377770028,
+        "WAPE_%": 19.973007009352802,
+        "bias": 0.15613368457882398
+      },
+      {
+        "weather": "Light rain/snow",
+        "hours": 160.0,
+        "mean_demand": 136.70625,
+        "MAE": 58.481619079562776,
+        "WAPE_%": 42.77903832455559,
+        "bias": -2.8068502105789106
+      }
+    ],
+    "by_daytype": [
+      {
+        "day": "Holiday",
+        "hours": 95.0,
+        "mean_demand": 159.8421052631579,
+        "MAE": 67.91186910186518,
+        "WAPE_%": 42.486845997215624,
+        "bias": 24.223857654044096
+      },
+      {
+        "day": "Weekend",
+        "hours": 624.0,
+        "mean_demand": 200.69871794871796,
+        "MAE": 42.433015163029424,
+        "WAPE_%": 21.1426438577808,
+        "bias": 6.144388817224273
+      },
+      {
+        "day": "Working day",
+        "hours": 1449.0,
+        "mean_demand": 231.05383022774328,
+        "MAE": 41.23917232504079,
+        "WAPE_%": 17.848296340464252,
+        "bias": 0.588328282525823
+      }
+    ],
+    "by_month": [
+      {
+        "mnth": 10,
+        "hours": 708.0,
+        "mean_demand": 280.84887005649716,
+        "MAE": 40.29581293253765,
+        "WAPE_%": 14.347863647958247,
+        "bias": 10.175111348212143
+      },
+      {
+        "mnth": 11,
+        "hours": 718.0,
+        "mean_demand": 212.62395543175487,
+        "MAE": 49.10309760493153,
+        "WAPE_%": 23.09386894116546,
+        "bias": -2.171512948506533
+      },
+      {
+        "mnth": 12,
+        "hours": 742.0,
+        "mean_demand": 166.72911051212938,
+        "MAE": 38.9486928420676,
+        "WAPE_%": 23.360463402240796,
+        "bias": 1.810000327433353
+      }
+    ]
+  },
+  "worst_days": [
+    {
+      "day": "2012-11-23 (Fri)",
+      "actual": 3910.0,
+      "predicted": 5773.913400947648,
+      "hours": 24,
+      "abs_err": 2945.976004852026,
+      "wx": 2,
+      "error_pct": 47.670419461576685
+    },
+    {
+      "day": "2012-10-02 (Tue)",
+      "actual": 4639.0,
+      "predicted": 4239.492815866445,
+      "hours": 24,
+      "abs_err": 2380.863778418817,
+      "wx": 3,
+      "error_pct": -8.611924641809765
+    },
+    {
+      "day": "2012-11-22 (Thu)",
+      "actual": 2425.0,
+      "predicted": 4607.230052026698,
+      "hours": 24,
+      "abs_err": 2182.230052026698,
+      "wx": 1,
+      "error_pct": 89.98886812481229
+    },
+    {
+      "day": "2012-11-21 (Wed)",
+      "actual": 5146.0,
+      "predicted": 5991.724123185877,
+      "hours": 24,
+      "abs_err": 2137.9295060949707,
+      "wx": 2,
+      "error_pct": 16.434592366612467
+    },
+    {
+      "day": "2012-10-07 (Sun)",
+      "actual": 3510.0,
+      "predicted": 5208.332137091263,
+      "hours": 24,
+      "abs_err": 1970.8133860866405,
+      "wx": 3,
+      "error_pct": 48.38553097126103
+    },
+    {
+      "day": "2012-12-24 (Mon)",
+      "actual": 920.0,
+      "predicted": 2634.3341687462025,
+      "hours": 23,
+      "abs_err": 1714.656439144896,
+      "wx": 3,
+      "error_pct": 186.34067051589156
+    },
+    {
+      "day": "2012-11-12 (Mon)",
+      "actual": 6269.0,
+      "predicted": 4946.086850194393,
+      "hours": 24,
+      "abs_err": 1702.3006182862446,
+      "wx": 3,
+      "error_pct": -21.102458921767532
+    },
+    {
+      "day": "2012-10-19 (Fri)",
+      "actual": 5424.0,
+      "predicted": 6279.756879194772,
+      "hours": 24,
+      "abs_err": 1663.7322040518657,
+      "wx": 3,
+      "error_pct": 15.777228598723681
+    }
+  ],
+  "sandy": {
+    "observed_hours": 12,
+    "actual": 1118.0,
+    "predicted": 2321.3373854265856
+  },
+  "test_mae_without_sandy": 42.38878494673788,
+  "test_mae_with_sandy": 42.75156352647216,
+  "holiday_adjacent": {
+    "days": [
+      "2012-10-07",
+      "2012-10-08",
+      "2012-10-09",
+      "2012-11-11",
+      "2012-11-12",
+      "2012-11-13",
+      "2012-11-21",
+      "2012-11-22",
+      "2012-11-23",
+      "2012-12-24",
+      "2012-12-25",
+      "2012-12-26"
+    ],
+    "table": [
+      {
+        "hol_adjacent": false,
+        "hours": 1882.0,
+        "MAE": 38.98660101154353,
+        "WAPE_%": 17.1124671392746,
+        "bias": -1.3875749051236101,
+        "share_of_total_abs_error_%": 79.16326761004497
+      },
+      {
+        "hol_adjacent": true,
+        "hours": 286.0,
+        "MAE": 67.5265965792543,
+        "WAPE_%": 41.57719401865819,
+        "bias": 33.5638767549115,
+        "share_of_total_abs_error_%": 20.836732389955028
+      }
+    ]
+  },
+  "worst8_holiday_adjacent": 6,
+  "residual_acf_lag1": 0.6755867364719659,
+  "residual_acf_lag24": 0.30340345249455064,
+  "within20_pct_ge50": 61.243718592964825,
+  "importance": [
+    {
+      "group": "Hour of day and day type",
+      "mae_increase": 147.72024751921154,
+      "std": 2.8586012476627896
+    },
+    {
+      "group": "Recent demand level",
+      "mae_increase": 28.363103821212498,
+      "std": 1.0641689357847564
+    },
+    {
+      "group": "Weather",
+      "mae_increase": 17.902095586005448,
+      "std": 0.9798286918286297
+    },
+    {
+      "group": "Season / month",
+      "mae_increase": 1.767132557861433,
+      "std": 0.3057041503139173
+    }
+  ],
+  "pdp_temp": {
+    "grid": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0,
+      21.0,
+      22.0,
+      23.0,
+      24.0,
+      25.0,
+      26.0,
+      27.0,
+      28.0,
+      29.0,
+      30.0,
+      31.0,
+      32.0,
+      33.0,
+      34.0,
+      35.0
+    ],
+    "pred": [
+      208.86458909202355,
+      208.86458909202355,
+      208.86458909202355,
+      208.86458909202355,
+      208.86458909202355,
+      208.3222438857627,
+      210.178904950789,
+      210.2152355728057,
+      209.9020497411482,
+      209.91118950810753,
+      210.2456758271939,
+      210.1384953029705,
+      211.73138234104817,
+      211.75672133909006,
+      214.38393013488835,
+      216.28927336146964,
+      217.5920281119229,
+      221.49851801213057,
+      224.60998895633708,
+      228.1473147996322,
+      227.81808983304535,
+      228.1223580708661,
+      235.12038521130685,
+      235.91697695768804,
+      236.20015654839352,
+      236.27407243176907,
+      236.97085756222765,
+      238.0844982359839,
+      240.3665894102608,
+      240.36317385856208,
+      240.32438047892296,
+      240.04344304274414,
+      239.79040373644267,
+      239.79836974572038,
+      239.6510933152484,
+      238.44049007382665
+    ]
+  },
+  "pdp_hum": {
+    "grid": [
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0
+    ],
+    "pred": [
+      228.5877903093642,
+      230.50221253759716,
+      234.7420283765301,
+      235.99353423485988,
+      234.53923918257047,
+      234.59673030567487,
+      234.63946937263688,
+      234.37437211757035,
+      230.4827847593078,
+      228.25832818850424,
+      220.74554365594344,
+      211.51496810879058,
+      204.87561817658965,
+      179.75594635550698,
+      164.40550207104408,
+      166.20654585690622,
+      159.1751516983343
+    ]
+  },
+  "robustness": {
+    "clean_mae": 42.75156352647216,
+    "noisy_mae": 44.47324675908148,
+    "noisy_wape": 20.289214418159386,
+    "no_weather_mae": 51.78448757420287,
+    "best_baseline_mae": 53.29655027466973,
+    "mae_increase_pct": 4.027181910068012
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "timeline": "0-3 months",
+      "recommendation": "Run the nightly day-ahead forecast and use it to plan rebalancing before the commuter peaks",
+      "evidence": "Working-day rush hours (07-09 and 16-19) hold 58% of working-day rentals; peaks of 477/h (08:00) and 525/h (17:00). Forecast WAPE 19.5% vs 24.3% for the best simple method",
+      "expected_benefit": "20% lower hourly error than the best simple baseline (13%-26% 95% CI) and 41% lower than 'same hour last week'",
+      "kpi": "Forecast WAPE; empty-bike and full-dock incidents at peak"
+    },
+    {
+      "priority": 2,
+      "timeline": "0-3 months",
+      "recommendation": "Plan fleet buffers from the calibrated 80% interval, not the point forecast",
+      "evidence": "Real coverage of the interval is 75% (nominal 80%), whereas a naive Poisson interval covers only 33%; the average upper bound sits 153 bikes/h above the forecast at commuter peaks",
+      "expected_benefit": "About 89% of hours stay at or below the upper bound, giving a quantified safety margin",
+      "kpi": "Interval coverage; share of peak hours above the upper bound"
+    },
+    {
+      "priority": 3,
+      "timeline": "0-3 months",
+      "recommendation": "Make operations weather-aware: scale deployed fleet and crew plans with the forecast",
+      "evidence": "At the same hour and season, +10 C raises rentals 28%, light rain/snow cuts them 40%, +10 km/h wind cuts them 3%; weather information lowers forecast error from 52 to 43 bikes/h",
+      "expected_benefit": "Fewer idle bikes on cold or wet days, more bikes on warm days",
+      "kpi": "Utilisation per bike by weather class"
+    },
+    {
+      "priority": 4,
+      "timeline": "0-3 months",
+      "recommendation": "Schedule maintenance and large rebalancing runs in the 00:00-05:59 window",
+      "evidence": "Only 3.2% of all rentals occur between midnight and 06:00",
+      "expected_benefit": "Maintenance with minimal lost rentals",
+      "kpi": "Rentals lost during maintenance windows"
+    },
+    {
+      "priority": 5,
+      "timeline": "3-6 months",
+      "recommendation": "Treat weekends as a different product: keep fleet size but shift bikes to leisure areas and promote casual use at midday",
+      "evidence": "Daily totals are similar on working and non-working days (about 4,585 vs 4,390), but weekends have a single midday peak (380/h at 13:00) and a 32% casual share vs 13% on working days",
+      "expected_benefit": "Better placement and conversion of casual riders",
+      "kpi": "Weekend casual rentals; casual-to-member conversion"
+    },
+    {
+      "priority": 6,
+      "timeline": "3-6 months",
+      "recommendation": "Add holiday-period and severe-weather rules: flag the days around public holidays, and do not rely on the model during extreme events",
+      "evidence": "6 of the 8 worst-forecast days are within one day of a public holiday (e.g. the day after Thanksgiving, Christmas Eve), and WAPE on holiday-adjacent days is 42% against 17% on other days; rain/snow hours have WAPE 43% vs 17% in clear weather; Hurricane Sandy shut the system down (most hours of 29-30 Oct were never recorded)",
+      "expected_benefit": "Avoids acting on forecasts at the times they are known to fail",
+      "kpi": "Forecast error on flagged days; number of manual overrides"
+    },
+    {
+      "priority": 7,
+      "timeline": "3-6 months",
+      "recommendation": "Retrain monthly and monitor forecast bias and WAPE to handle growth",
+      "evidence": "Demand grew 63% per hour from 2011 to 2012; the level-adjusted design copes with growth, but forecast errors are autocorrelated (lag-24 ACF 0.30), so level drift must be monitored",
+      "expected_benefit": "Prevents silent model decay",
+      "kpi": "Rolling 28-day WAPE and bias"
+    },
+    {
+      "priority": 8,
+      "timeline": "6-12 months",
+      "recommendation": "Invest in better data: station-level trips, bike availability, real weather forecasts and an events calendar",
+      "evidence": "Forecast-quality weather instead of perfect weather raises MAE by about 4%; observed rentals understate true demand when bikes run out",
+      "expected_benefit": "Station-level rebalancing and less hidden (unserved) demand",
+      "kpi": "Share of demand served; station-level forecast error"
+    }
+  ]
+}
